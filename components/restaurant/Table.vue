@@ -3,15 +3,36 @@
     <h1>TOP 50: THE RANKING</h1>
     <div class="table-container">
       <div class="table-col">
-        <RestaurantRow />
+        <RestaurantRow :isHeader="true" />
+        <RestaurantRow
+          v-for="(restaurant, index) in restaurantOrganized.first"
+          :key="restaurant.id"
+          :name="restaurant.name"
+          :rank="restaurant.rank"
+          :index="index"
+        />
       </div>
       <div class="table-col">
+        <RestaurantRow :isHeader="true" />
+        <RestaurantRow
+          v-for="(restaurant, index) in restaurantOrganized.second"
+          :key="restaurant.id"
+          :name="restaurant.name"
+          :rank="restaurant.rank"
+          :index="index"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import restaurants from "~~/database/data.json";
+
+const restaurantOrganized = {
+  first: [...restaurants].splice(0, 25),
+  second: [...restaurants].splice(25, 25),
+};
 </script>
 
 
