@@ -20,14 +20,21 @@
       </div>
     </NuxtLayout>
 
-    <div v-else>
-      <h1>Restaurant not found</h1>
-      <button
-        class="btn btn-primary btn-lg"
-        @click="$router.push('/restaurants')"
-      >
-        Go Back
-      </button>
+    <div class="container text-center" v-else>
+      <NuxtLayout name="error">
+        <template #header>
+          <h1>Restaurant not found</h1>
+        </template>
+
+        <template #redirectEl>
+          <button
+            class="btn btn-primary btn-lg"
+            @click="$router.push('/restaurants')"
+          >
+            Go Back
+          </button>
+        </template>
+      </NuxtLayout>
     </div>
   </div>
 </template>
