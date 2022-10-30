@@ -1,13 +1,14 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark px-5 py-3">
-    <a class="navbar-brand" href="/">Resturtantly</a>
+    <NuxtLink to="/" class="navbar-brand">Resturtantly</NuxtLink>
+
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="/" aria-current="page"> Home </a>
+          <NuxtLink to="/" class="nav-link">Home</NuxtLink>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/restaurants">Restaurants</a>
+          <NuxtLink to="/restaurants" class="nav-link">Restaurants</NuxtLink>
         </li>
       </ul>
     </div>
